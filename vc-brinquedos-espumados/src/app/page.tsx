@@ -4,6 +4,7 @@ import btnTT from './assets/images/ttBlueStars.png'
 import banner from './assets/images/bannerLP.png'
 import onmStore  from './assets/images/ornamentStore.png'
 import Navbar from "../components/nav";
+import Footer from '../components/footer'
 import CardListServer from "@/components/listCardsStore";
 
 
@@ -86,13 +87,13 @@ export default function Home() {
           
         <div className="w-[85vw] h-190 mt-5 border-b border-t self-center">            
             <div className="text-center p-5">
-             <p>
+             <p className="font-medium">
                 Na VC Brinquedos Espumados, acreditamos que brincar é uma 
                 das partes mais importantes da infância — e deve ser feita com 
                 segurança, criatividade e alegria!
               </p>
               <br />
-              <p>                
+              <p className="font-medium">                
                 Somos uma loja especializada na produção e venda de brinquedos 
                 espumados, ideais para escolas, creches, brinquedotecas, espaços 
                 recreativos e ambientes que priorizam o bem-estar das crianças. <br /> 
@@ -101,13 +102,13 @@ export default function Home() {
                 imaginação de forma segura.
               </p>
               <br />
-              <p>
+              <p className="font-medium">
                 Nosso compromisso vai além da diversão: prezamos pela qualidade, 
                 resistência e segurança, sempre seguindo normas rigorosas para 
                 garantir tranquilidade a pais, educadores e instituições.
               </p>
-              br
-              <p>
+              <br />
+              <p className="font-medium">
                 Cada peça da VC Brinquedos Espumados é criada com carinho e 
                 responsabilidade, porque sabemos que brincar é coisa séria
                 — e também a forma mais bonita de crescer.
@@ -116,6 +117,23 @@ export default function Home() {
           </div>          
         </div>
       </section>
+
+      <section className="flex w-full h-200 justify-center">
+        <div className="flex flex-col">
+          <div className="flex w-[90vw] h-30 pb-5 align-end justify-center border-b ">
+            <Image src={btnTT} alt="" draggable="false" className='w-7 h-7 self-end'></Image>
+            <h1 className="font-normal text-4xl self-end">Entre em contato</h1>
+          </div>
+          
+        <div className="w-[85vw] h-150 mt-5 border self-center">            
+            <div>
+              {/* estrutura do footer, provavelmente dividida em 2 partes: img com background e parte abaixo dela*/}
+              <Footer/>
+            </div>
+          </div>          
+        </div>
+      </section>
+
     </section>
     
 

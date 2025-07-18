@@ -1,14 +1,16 @@
 import Image from "next/image";
-import { useState } from "react";
 import btnImg from './assets/images/btnStar.png'
 import btnTT from './assets/images/ttBlueStars.png'
 import banner from './assets/images/bannerLP.png'
 import onmStore  from './assets/images/ornamentStore.png'
-import Navbar from "./components/nav";
+import Navbar from "../components/nav";
+import CardListServer from "@/components/listCardsStore";
 
 
 
 export default function Home() {
+
+
   return (
     <section className="w-full h-170">
       <section className="relative w-full h-170">
@@ -37,6 +39,7 @@ export default function Home() {
             <Image src={btnTT} alt="" draggable="false" className='w-7 h-7 self-end'></Image>
             <h1 className="font-normal text-4xl self-end">Loja</h1>
           </div>
+          
           <div className="w-[85vw] min-h-150 mt-5 border-b border-t self-center">
             <div>
               <h1 className="text-2xl font-bold tracking-wide p-5 mt-5">Nova Coleção</h1>
@@ -52,8 +55,8 @@ export default function Home() {
               <button className="w-25 border p-1 rounded-md cursor-pointer">Promoções</button>
             </div>
 
-            <div>
-              {/* cards Produtos*/}
+            <div className="flex flex-row gap-5">
+              <CardListServer/>
             </div>
           </div>
         </div>        

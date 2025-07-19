@@ -135,7 +135,7 @@ export default function Home() {
             <h1 className="font-normal text-4xl self-end">Entre em contato</h1>
           </div>
           
-        <div className="w-[85vw] h-150 mt-5 border self-center">            
+        <div className="w-[100vw] h-400 mt-5 self-center">            
             <div>
               {/* estrutura do footer, provavelmente dividida em 2 partes: img com background e parte abaixo dela*/}
               <Footer/>

@@ -3,9 +3,16 @@ import btnImg from './assets/images/btnStar.png'
 import btnTT from './assets/images/ttBlueStars.png'
 import banner from './assets/images/bannerLP.png'
 import onmStore  from './assets/images/ornamentStore.png'
+import aboutPic1 from './assets/images/AboutPic1.png'
+import aboutVector1 from './assets/images/VectorAbout1.png'
+import aboutVector2 from './assets/images/VectorAbout2.png'
+import aboutEnfeite from './assets/images/AbouteEnfeite.png'
+import aboutEnfeite2 from './assets/images/AboutEnfeite2.png'
 import Navbar from "../components/nav";
 import Footer from '../components/footer'
 import CardListServer from "@/components/listCardsStore";
+import { Suspense } from "react";
+import Link from "next/link";
 
 
 
@@ -16,9 +23,9 @@ export default function Home() {
     <section className="w-full h-170">
       <section className="relative w-full h-170">
             <Image src={banner} alt="" draggable="false" className='w-full h-170 object-cover'/>       
-            <Navbar/> 
-          <div className="mt-25 md:mt-35 ml-10  absolute inset-0 flex flex-col">
-            <h1 className="cursor-default font-extrabold text-3xl text-red-50">Brincar com <br />
+            <Navbar color={true} invert={true}/> 
+          <div className="mt-25 md:mt-35 ml-10 md:ml-25 absolute inset-0 flex flex-col">
+            <h1 className="cursor-default font-extrabold text-3xl md:text-6xl text-red-50">Brincar com <br />
             Segurança Nunca <br />
             Foi Tão Divertido!</h1><br />
             <p className="cursor-default text-red-50 font-semibold">
@@ -27,73 +34,76 @@ export default function Home() {
               para transformar qualquer espaço em um mundo de alegria. Tudo pensado para estimular <br />
               a imaginação com conforto e confiança!
               </p>
-            <button className="flex items-center cursor-pointer p-5 font-medium w-50 h-15 self-start mt-20 border-1 rounded-4xl border-white text-red-50 hover:scale-108 transition">
+            <Link className="flex items-center cursor-pointer p-5 font-medium w-50 h-15 self-start mt-20 border-1 rounded-4xl border-white text-red-50 hover:scale-108 transition" href={"#toys"}>
               Ver Brinquedos 
               <Image src={btnImg} alt="" draggable="false" className='w-8 h-8 object-cover ml-3'/>
-              </button>
+              </Link>
           </div>
       </section>
 
-      <section className="flex w-full h-200 justify-center">
+      <section className="flex w-full justify-center">
         <div className="flex flex-col">
-          <div className="flex w-[90vw] h-30 pb-5 align-end justify-center border-b ">
+          <div className="flex w-[90vw] h-30 pb-5 align-end justify-start ml-5 md:justify-center md:ml-0">
             <Image src={btnTT} alt="" draggable="false" className='w-7 h-7 self-end'></Image>
             <h1 className="font-normal text-4xl self-end">Loja</h1>
           </div>
           
-          <div className="w-[85vw] min-h-150 mt-5 border-b border-t self-center">
-            <div>
+          <div className="w-[85vw] min-h-150 mt-5 border-t self-center">
+            <div id="toys">
               <h1 className="text-2xl font-bold tracking-wide p-5 mt-5">Nova Coleção</h1>
             </div>
 
-            <div className="flex justify-center">
-              <input type="text" placeholder="Pesquisar" className="border p-1 rounded-2xl"/>
+            <div className="flex flex-col md:flex-row justify-center gap-5">
+            <Suspense fallback={<div>Carregando produtos...</div>}>
+              <CardListServer all={false}/>
+            </Suspense>              
             </div>
 
-            <div className="flex flex-row gap-5 mt-[2vh] justify-center">
-              <button className="w-25 border p-1 rounded-md cursor-pointer">Todos</button>
-              <button className="w-25 border p-1 rounded-md cursor-pointer">kits</button>
-              <button className="w-25 border p-1 rounded-md cursor-pointer">Promoções</button>
-            </div>
-
-            <div className="flex flex-row gap-5">
-              <CardListServer/>
+            <div className="flex justify-end">
+              <Link className="font-medium text-[14pt] cursor-pointer text-[#7DACFF] mt-15" href={"/products"}>Ver Mais {">>>"}</Link>
             </div>
           </div>
         </div>        
       </section>
 
-      <section className="flex w-full h-200 justify-center">
+      <section className="flex w-full h-200 mt-15 md:mt-0 justify-center" id="about">
         <div className="flex flex-col">
-          <div className="flex w-[90vw] h-30 pb-5 align-end justify-center border-b ">
-            <Image src={btnTT} alt="" draggable="false" className='w-7 h-7 self-end'></Image>
-            <h1 className="font-normal text-4xl self-end">Kits</h1>
-          </div>
-          
-        <div className="w-[85vw] h-150 mt-5 border self-center">            
-            <div>
-              {/* cards KITS*/}
-            </div>
-          </div>          
-        </div>
-      </section>
-
-      <section className="flex w-full h-200 justify-center">
-        <div className="flex flex-col">
-          <div className="flex w-[90vw] h-30 pb-5 align-end justify-center border-b ">
+          <div className="flex w-[90vw] h-30 pb-5 align-end justify-center ">
             <Image src={btnTT} alt="" draggable="false" className='w-7 h-7 self-end'></Image>
             <h1 className="font-normal text-4xl self-end">Sobre Nós</h1>
           </div>
           
-        <div className="w-[85vw] h-190 mt-5 border-b border-t self-center">            
-            <div className="text-center p-5">
-             <p className="font-medium">
+        <div className="relative w-[85vw] md:h-250 mt-5 border border-t self-center"> 
+          <div className="hidden w-full h-full md:flex absolute z-5">
+            <div className="absolute">
+              <Image src={aboutVector1} alt="" draggable="false" height={320} />
+            </div>
+
+            <div className="absolute self-end">
+              <Image src={aboutVector2} alt="" draggable="false" height={180} />
+            </div>
+            
+            <div className="absolute h-20 right-0 pb-50 self-start ">
+              <Image src={aboutEnfeite} alt="" draggable="false" height={320}/>
+            </div>
+            <div className="absolute h-20 right-0 pb-50 self-start rotate-0">
+              <Image src={aboutEnfeite2} alt="" height={260}/>
+            </div>
+          </div>           
+
+          <div className="hidden w-full h-full md:flex absolute z-0">
+            {/* <Image className="right-0" src={aboutPic1} alt="" height={500} /> */}
+          </div>
+
+          <div className="relative md:w-[40vw] md:mt-5 text-center md:text-left p-5 z-10">
+             <p className="text-[14pt] font-medium">
                 Na VC Brinquedos Espumados, acreditamos que brincar é uma 
                 das partes mais importantes da infância — e deve ser feita com 
                 segurança, criatividade e alegria!
               </p>
+              
               <br />
-              <p className="font-medium">                
+              <p className="text-[14pt]  font-medium">                
                 Somos uma loja especializada na produção e venda de brinquedos 
                 espumados, ideais para escolas, creches, brinquedotecas, espaços 
                 recreativos e ambientes que priorizam o bem-estar das crianças. <br /> 
@@ -102,13 +112,13 @@ export default function Home() {
                 imaginação de forma segura.
               </p>
               <br />
-              <p className="font-medium">
+              <p className="text-[14pt] font-medium">
                 Nosso compromisso vai além da diversão: prezamos pela qualidade, 
                 resistência e segurança, sempre seguindo normas rigorosas para 
                 garantir tranquilidade a pais, educadores e instituições.
               </p>
               <br />
-              <p className="font-medium">
+              <p className="text-[14pt] font-medium">
                 Cada peça da VC Brinquedos Espumados é criada com carinho e 
                 responsabilidade, porque sabemos que brincar é coisa séria
                 — e também a forma mais bonita de crescer.

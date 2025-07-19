@@ -1,4 +1,3 @@
-// components/CardListServer.tsx
 import { CardStore } from "./cardsStore";
 
 type Produto = { 
@@ -9,15 +8,22 @@ type Produto = {
     price: number;
 }[];
 
-export default async function CardListServer() {
-  const res = await fetch("http://localhost:5555/products", {
+interface onlyThree{
+  all: boolean;
+}
+
+export default async function CardListServer({all} : onlyThree) {
+  try{
+    const res = await fetch("http://localhost:5555/products", {
     cache: "no-store",
   });
   const data: Produto = await res.json();
 
+  const produtos = all ? data : data.slice(0, 3)
+
   return (
     <>
-      {data.map((item) => (
+      {produtos.map((item) => (
         <CardStore
           key={item.id}
           name={item.name}
@@ -29,4 +35,10 @@ export default async function CardListServer() {
       ))}
     </>
   );
+  }catch(erro){
+    console.error(erro, "Erro ao carregar Produtos")
+    return(
+      <div>Erro ao carregar produtos</div>
+    )
+  }
 }

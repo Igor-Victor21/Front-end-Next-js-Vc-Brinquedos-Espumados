@@ -4,6 +4,7 @@ import btnTT from './assets/images/ttBlueStars.png'
 import banner from './assets/images/bannerLP.png'
 import onmStore  from './assets/images/ornamentStore.png'
 import aboutPic1 from './assets/images/AboutPic1.png'
+import aboutPic2 from './assets/images/AboutPic2.png'
 import aboutVector1 from './assets/images/VectorAbout1.png'
 import aboutVector2 from './assets/images/VectorAbout2.png'
 import aboutEnfeite from './assets/images/AbouteEnfeite.png'
@@ -23,7 +24,7 @@ export default function Home() {
     <section className="w-full h-170">
       <section className="relative w-full h-170">
             <Image src={banner} alt="" draggable="false" className='w-full h-170 object-cover'/>       
-            <Navbar color={true} invert={true}/> 
+            <Navbar color={true} invert={true} showLoja={true} showPromo={true} showFav={true} showSobre={true} showCtt={true} /> 
           <div className="mt-25 md:mt-35 ml-10 md:ml-25 absolute inset-0 flex flex-col">
             <h1 className="cursor-default font-extrabold text-3xl md:text-6xl text-red-50">Brincar com <br />
             Segurança Nunca <br />
@@ -66,15 +67,15 @@ export default function Home() {
         </div>        
       </section>
 
-      <section className="flex w-full h-200 mt-15 md:mt-0 justify-center" id="about">
-        <div className="flex flex-col">
+      <section className="flex w-full xl:h-230 mt-15 xl:mt-0 justify-center" id="about">
+        <div className="block flex flex-col">
           <div className="flex w-[90vw] h-30 pb-5 align-end justify-center ">
             <Image src={btnTT} alt="" draggable="false" className='w-7 h-7 self-end'></Image>
             <h1 className="font-normal text-4xl self-end">Sobre Nós</h1>
           </div>
           
-        <div className="relative w-[85vw] md:h-250 mt-5 border border-t self-center"> 
-          <div className="hidden w-full h-full md:flex absolute z-5">
+        <div className="relative w-[85vw] xl:h-250 mt-5 border border-t self-center"> 
+          <div className="hidden w-full h-full xl:flex absolute z-5">
             <div className="absolute">
               <Image src={aboutVector1} alt="" draggable="false" height={320} />
             </div>
@@ -86,20 +87,26 @@ export default function Home() {
             <div className="absolute h-20 right-0 pb-50 self-start ">
               <Image src={aboutEnfeite} alt="" draggable="false" height={320}/>
             </div>
-            <div className="absolute h-20 right-0 pb-50 self-start rotate-0">
+            {/* <div className="absolute h-20 right-0 pb-50 self-start rotate-0">
               <Image src={aboutEnfeite2} alt="" height={260}/>
-            </div>
-          </div>           
-
-          <div className="hidden w-full h-full md:flex absolute z-0">
-            {/* <Image className="right-0" src={aboutPic1} alt="" height={500} /> */}
+            </div> */}
           </div>
 
-          <div className="relative md:w-[40vw] md:mt-5 text-center md:text-left p-5 z-10">
+          <div className="absolute right-0">
+              <Image src={aboutPic1} alt="" width={500} className="overflow-hidden mt-11 rounded-2xl"></Image>
+          </div>           
+
+          <div className="absolute right-0 bottom-30">
+            <Image src={aboutPic2} alt="" width={300} className="overflow-hidden mr-80 border-15 border-white rounded-2xl"/>
+          </div>
+
+          
+
+          <div className="relative xl:w-[40vw] xl:mt-5 text-center xl:text-left p-5 z-10">
              <p className="text-[14pt] font-medium">
                 Na VC Brinquedos Espumados, acreditamos que brincar é uma 
                 das partes mais importantes da infância — e deve ser feita com 
-                segurança, criatividade e alegria!
+                <strong> segurança</strong>, criatividade e alegria!
               </p>
               
               <br />
@@ -107,20 +114,20 @@ export default function Home() {
                 Somos uma loja especializada na produção e venda de brinquedos 
                 espumados, ideais para escolas, creches, brinquedotecas, espaços 
                 recreativos e ambientes que priorizam o bem-estar das crianças. <br /> 
-                Nossos produtos são desenvolvidos com materiais macios, duráveis e 
+                Nossos produtos são desenvolvidos com materiais macios, <strong>duráveis </strong> e 
                 coloridos, pensados para estimular o aprendizado, o movimento e a 
                 imaginação de forma segura.
               </p>
               <br />
               <p className="text-[14pt] font-medium">
-                Nosso compromisso vai além da diversão: prezamos pela qualidade, 
+                Nosso compromisso vai além da diversão: prezamos pela <strong> qualidade</strong>, 
                 resistência e segurança, sempre seguindo normas rigorosas para 
-                garantir tranquilidade a pais, educadores e instituições.
+                garantir <strong>tranquilidade</strong> a pais, educadores e instituições.
               </p>
               <br />
               <p className="text-[14pt] font-medium">
-                Cada peça da VC Brinquedos Espumados é criada com carinho e 
-                responsabilidade, porque sabemos que brincar é coisa séria
+                Cada peça da VC Brinquedos Espumados é criada com <strong>carinho</strong> e 
+                responsabilidade, porque sabemos que <strong>brincar é coisa séria</strong>
                 — e também a forma mais bonita de crescer.
               </p>
             </div>
@@ -128,7 +135,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex w-full h-200 justify-center">
+      <section className="flex w-full h-200 justify-center mt-5">
         <div className="flex flex-col">
           <div className="flex w-[90vw] h-30 pb-5 align-end justify-center border-b ">
             <Image src={btnTT} alt="" draggable="false" className='w-7 h-7 self-end'></Image>

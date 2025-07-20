@@ -8,46 +8,51 @@ export default function Footer (){
             {/*  1° parte do footer */}
             <section className="flex flex-col xl:flex-row bg-[#6C85B3]">
                 <div className="">
-                    <div className="flex flex-col bg-white gap-3 p-5 m-5 rounded-lg">
-                        <p className="font-medium">Nome Completo</p>
-                        <input className="p-1 border-solid border-1 border-blue-300 rounded-lg" placeholder="Nome Completo" type="text"/>
-                        <p className="font-medium">Email</p>
-                        <input className="p-1 border-solid border-1 border-blue-300 rounded-lg" placeholder="seu@email.com" type="email"/>
-                        <p className="font-medium">Mensagem</p>
-                        <input className="pl-8 border-solid border-1 border-blue-300 rounded-lg" type="text"/>
-                        <button className="p-2 mb-5 rounded-lg bg-yellow-400 self-center">Enviar Mensagem</button>
+                    <div>
+                        {/* Entre en contato */}
                     </div>
-                    <div className="p-5 text-center">
-                        <div className="flex flex-row pb-5">
-                            {/* parte superior */}
-                            <div className="w-1/2 xl:1/4">
-                                {/* Icone do email */}
-                                <h1 className="font-medium">Email</h1>
-                                <h3 className="py-2 font-medium">Nossa equipe está pronta para ajudar.</h3>
-                                <p className="text-{sm}">vcbrinquedos@gmail.com</p>
-                            </div>
-                            <div className="w-1/2 xl:1/4">
-                                {/* icone do whatsapp */}
-                                <h1 className="font-medium">Whatsapp</h1>
-                                <h3 className="py-2 font-medium">Entre em contato conosco via Whatsapp.</h3>
-                                <button className="p-1 border-solid border-2 border-black-400 rounded-lg ">Começar chat</button>
-                            </div>
+                    <div className="flex flex-col md:flex-row">
+                        <div className="flex flex-col bg-white gap-3 p-5 m-5 rounded-lg">
+                            <p className="font-medium">Nome Completo</p>
+                            <input className="p-1 border-solid border-1 border-blue-300 rounded-lg" placeholder="Nome Completo" type="text"/>
+                            <p className="font-medium">Email</p>
+                            <input className="p-1 border-solid border-1 border-blue-300 rounded-lg" placeholder="seu@email.com" type="email"/>
+                            <p className="font-medium">Mensagem</p>
+                            <input className="pl-8 border-solid border-1 border-blue-300 rounded-lg" type="text"/>
+                            <button className="p-2 mb-5 rounded-lg bg-yellow-400 self-center">Enviar Mensagem</button>
                         </div>
-                        <div className="flex flex-row">
-                            {/* parte inferior */}
-                            <div className="w-1/2 xl:1/4">
-                                {/* icone de localização */}
-                                <h1 className="font-medium">Loja</h1>
-                                <h3 className="py-2 font-medium">Venha dizer olá na sede do noso escritório.</h3>
-                                <p className="text-{sm}">Cep: 12345-000 Curitiba - PR</p>
+                        <div className="p-5 text-center">
+                            <div className="flex flex-row pb-5">
+                                {/* parte superior */}
+                                <div className="w-1/2 xl:1/4">
+                                    {/* Icone do email */}
+                                    <h1 className="font-medium">Email</h1>
+                                    <h3 className="py-2 font-medium">Nossa equipe está pronta para ajudar.</h3>
+                                    <p className="text-{sm}">vcbrinquedos@gmail.com</p>
+                                </div>
+                                <div className="w-1/2 xl:1/4">
+                                    {/* icone do whatsapp */}
+                                    <h1 className="font-medium">Whatsapp</h1>
+                                    <h3 className="py-2 font-medium">Entre em contato conosco via Whatsapp.</h3>
+                                    <button className="p-1 border-solid border-2 border-black-400 rounded-lg ">Começar chat</button>
+                                </div>
                             </div>
-                            <div className="w-1/2 xl:1/4">
-                                {/* icone de telefone */}
-                                <h1 className="font-medium">Telefone</h1>
-                                <h3 className="py-2 font-medium">Seg.-Sext.8hrs ás 18hrs</h3>
-                                <p className="text-{sm}">(000) 12345-6789</p>
+                            <div className="flex flex-row">
+                                {/* parte inferior */}
+                                <div className="w-1/2 xl:1/4">
+                                    {/* icone de localização */}
+                                    <h1 className="font-medium">Loja</h1>
+                                    <h3 className="py-2 font-medium">Venha dizer olá na sede do noso escritório.</h3>
+                                    <p className="text-{sm}">Cep: 12345-000 Curitiba - PR</p>
+                                </div>
+                                <div className="w-1/2 xl:1/4">
+                                    {/* icone de telefone */}
+                                    <h1 className="font-medium">Telefone</h1>
+                                    <h3 className="py-2 font-medium">Seg.-Sext.8hrs ás 18hrs</h3>
+                                    <p className="text-{sm}">(000) 12345-6789</p>
+                                </div>
+                                {/* imagem que tem dentro do footer */}
                             </div>
-                            {/* imagem que tem dentro do footer */}
                         </div>
                     </div>
                 </div>

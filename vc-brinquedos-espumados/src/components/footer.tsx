@@ -1,17 +1,29 @@
 // Necessário importar as imagens, chuto que é umas 10
 // Preciso fazer a lógica de ida ao whatsapp e email de contato sem usar um use effect, vou pesquisar mais caso não ache nada vou perguntar pra IA mesmo sobre isso
+import Image from 'next/image'
+
+import Gmail from '../app/assets/images/IconGmail.png'
+import Wpp from '../app/assets/images/IconChat.png'
+import Loja from '../app/assets/images/IconPinpoint.png'
+import Fone from '../app/assets/images/IconTelefone.png'
+import TT from '../app/assets/images/Twitter.png'
+import Linkedin from '../app/assets/images/Linkedin.png'
+import Face from '../app/assets/images/Facebook.png'
+import Github from '../app/assets/images/Github.png'
+import Link from 'next/link'
+
 
 export default function Footer (){
     return(
         <>
             {/*  1° parte do footer */}
-            <section className="flex flex-col bg-[#6C85B3] xl:flex-row justify-center">
+            <section className="flex flex-col bg-gradient-to-l from-[#6C85B3] from-100% to-[#7DACFF] to-0% xl:flex-row justify-center">
                 <div className="">
                     <div>
                         {/* Entre en contato */}
                     </div>
-                    <div className="flex flex-col md:flex-row">
-                        <div className="flex flex-col bg-white gap-3 p-5 m-5 rounded-lg">
+                    <div className="flex flex-col md:flex-row gap-20">
+                        <div className="flex flex-col bg-white gap-3 p-5 m-5 rounded-lg md:w-md md:ml-20 xl:w-xl">
                             <p className="font-medium">Nome Completo</p>
                             <input className="p-1 border-solid border-1 border-blue-300 rounded-lg" placeholder="Nome Completo" type="text"/>
                             <p className="font-medium">Email</p>
@@ -20,17 +32,17 @@ export default function Footer (){
                             <textarea className="h-30 pl-1 border-solid border-1 border-blue-300 rounded-lg md:h-40 xl:h-50"/>
                             <button className="p-2 mb-5 rounded-lg bg-yellow-400 self-center">Enviar Mensagem</button>
                         </div>
-                        <div className="p-5 text-center flex flex-col xl:flex-row items-center">
+                        <div className="p-5 text-center flex flex-col items-center justify-center">
                             <div className="flex flex-row pb-5">
                                 {/* parte superior */}
-                                <div className="w-1/2 xl:1/4">
-                                    {/* Icone do email */}
+                                <div className="w-1/2 xl:w-3xs flex items-center flex-col">                               
+                                    <Image src={Gmail} alt='' draggable='false' className='h-[26px] w-[26px]'/>
                                     <h1 className="font-medium">Email</h1>
                                     <h3 className="py-2 font-medium">Nossa equipe está pronta para ajudar.</h3>
                                     <p className="text-{sm}">vcbrinquedos@gmail.com</p>
                                 </div>
-                                <div className="w-1/2 xl:1/4">
-                                    {/* icone do whatsapp */}
+                                <div className="w-1/2 xl:w-3xs flex items-center flex-col">
+                                    <Image src={Wpp} alt='' draggable='false' className='h-[26px] w-[26px]'/>
                                     <h1 className="font-medium">Whatsapp</h1>
                                     <h3 className="py-2 font-medium">Entre em contato conosco via Whatsapp.</h3>
                                     <button className="p-1 border-solid border-2 border-black-400 rounded-lg ">Começar chat</button>
@@ -38,14 +50,14 @@ export default function Footer (){
                             </div>
                             <div className="flex flex-row">
                                 {/* parte inferior */}
-                                <div className="w-1/2 xl:1/4">
-                                    {/* icone de localização */}
+                                <div className="w-1/2 xl:w-3xs flex items-center flex-col">
+                                    <Image src={Loja} alt='' draggable='false' className='h-[26px] w-[26px]'/>
                                     <h1 className="font-medium">Loja</h1>
                                     <h3 className="py-2 font-medium">Venha dizer olá na sede do noso escritório.</h3>
                                     <p className="text-{sm}">Cep: 12345-000 Curitiba - PR</p>
                                 </div>
-                                <div className="w-1/2 xl:1/4">
-                                    {/* icone de telefone */}
+                                <div className="w-1/2 xl:w-3xs flex items-center flex-col">
+                                    <Image src={Fone} alt='' draggable='false' className='h-[26px] w-[26px]'/>
                                     <h1 className="font-medium">Telefone</h1>
                                     <h3 className="py-2 font-medium">Seg.-Sext.8hrs ás 18hrs</h3>
                                     <p className="text-{sm}">(000) 12345-6789</p>
@@ -58,8 +70,8 @@ export default function Footer (){
             </section>
 
             {/* 2° parte do footer */}
-            <section className="bg-[#7DACFF]">
-                <div className="flex flex-col xl:flex-row  xl:justify-between p-5 gap-5">
+            <section className="bg-gradient-to-l from-[#6C85B3] to-[#7DACFF]">
+                <div className="flex flex-col xl:flex-row xl:justify-between p-5 gap-5">
                     {/* Mensagem superior */}
                     <div>
                         <h3 className="py-2 font-medium">Fique por dentro!</h3>
@@ -72,7 +84,7 @@ export default function Footer (){
                 </div>
                 <div className="">
                     {/* Mensagem inferior */}
-                    <div className="flex flex-col text-center xl:flex-row gap-40 p-4">
+                    <div className="flex flex-col text-center xl:flex-row gap-32 p-4">
                         <div className="py-3">
                             <div>
                                 {/* Imagem logo */}
@@ -106,10 +118,13 @@ export default function Footer (){
                     </div>
                     {/* imagem de divisão */}
                     <div className="pt-10">
-                        <div>
-                            {/* Icones de redes sociais */}
+                        <div className='flex items-center flex-row justify-center gap-20'>
+                            <Image src={TT} alt='' draggable='false' className='h-[26px] w-[26px]'/>
+                            <Image src={Linkedin} alt='' draggable='false' className='h-[26px] w-[26px]'/>
+                            <Image src={Face} alt='' draggable='false' className='h-[26px] w-[26px]'/>
+                            <Image src={Github} alt='' draggable='false' className='h-[26px] w-[26px]'/>
                         </div>
-                        <p>© 2025 VC Brinquedos Espumados. Todos os direitos reservados.</p>
+                        <p className="pl-2">© 2025 VC Brinquedos Espumados. Todos os direitos reservados.</p>
                     </div>
                 </div>
             </section>

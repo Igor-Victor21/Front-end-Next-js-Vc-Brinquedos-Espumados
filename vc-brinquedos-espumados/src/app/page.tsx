@@ -92,11 +92,11 @@ export default function Home() {
             </div> */}
           </div>
 
-          <div className="absolute right-0">
+          <div className="hidden xl:block xl:absolute right-0">
               <Image src={aboutPic1} alt="" width={500} className="overflow-hidden mt-11 rounded-2xl"></Image>
           </div>           
 
-          <div className="absolute right-0 bottom-30">
+          <div className="hidden xl:block xl:absolute right-0 bottom-30">
             <Image src={aboutPic2} alt="" width={300} className="overflow-hidden mr-80 border-15 border-white rounded-2xl"/>
           </div>
 

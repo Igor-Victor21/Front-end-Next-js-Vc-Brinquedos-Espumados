@@ -1,12 +1,11 @@
 // Necessário importar as imagens, chuto que é umas 10
 // Preciso fazer a lógica de ida ao whatsapp e email de contato sem usar um use effect, vou pesquisar mais caso não ache nada vou perguntar pra IA mesmo sobre isso
-// Resolver o problema de padding top e margin top não estarem funcionando
 
 export default function Footer (){
     return(
         <>
             {/*  1° parte do footer */}
-            <section className="flex flex-col xl:flex-row bg-[#6C85B3]">
+            <section className="flex flex-col bg-[#6C85B3] xl:flex-row justify-center">
                 <div className="">
                     <div>
                         {/* Entre en contato */}
@@ -18,10 +17,10 @@ export default function Footer (){
                             <p className="font-medium">Email</p>
                             <input className="p-1 border-solid border-1 border-blue-300 rounded-lg" placeholder="seu@email.com" type="email"/>
                             <p className="font-medium">Mensagem</p>
-                            <input className="pl-8 border-solid border-1 border-blue-300 rounded-lg" type="text"/>
+                            <textarea className="h-30 pl-1 border-solid border-1 border-blue-300 rounded-lg md:h-40 xl:h-50"/>
                             <button className="p-2 mb-5 rounded-lg bg-yellow-400 self-center">Enviar Mensagem</button>
                         </div>
-                        <div className="p-5 text-center">
+                        <div className="p-5 text-center flex flex-col xl:flex-row items-center">
                             <div className="flex flex-row pb-5">
                                 {/* parte superior */}
                                 <div className="w-1/2 xl:1/4">
@@ -60,18 +59,20 @@ export default function Footer (){
 
             {/* 2° parte do footer */}
             <section className="bg-[#7DACFF]">
-                <div className="flex flex-col p-5 gap-5">
+                <div className="flex flex-col xl:flex-row  xl:justify-between p-5 gap-5">
                     {/* Mensagem superior */}
                     <div>
                         <h3 className="py-2 font-medium">Fique por dentro!</h3>
                         <p>Seja o primeiro a receber as últimas novidades sobre promoções, descontos e ofertas.</p>
                     </div>
-                    <input className="p-1 rounded-lg self-center text-center bg-white" placeholder="Digite seu e-mail" type="email"/>
-                    <button className="p-2 rounded-lg bg-yellow-400 self-center">Inscreva-se</button>
+                    <div className="flex flex-col gap-5 xl:flex-row ">
+                        <input className="p-1 rounded-lg self-center text-center bg-white" placeholder="Digite seu e-mail" type="email"/>
+                        <button className="p-2 rounded-lg bg-yellow-400 self-center">Inscreva-se</button>
+                    </div>
                 </div>
-                <div>
+                <div className="">
                     {/* Mensagem inferior */}
-                    <div className="flex flex-col text-center">
+                    <div className="flex flex-col text-center xl:flex-row gap-40 p-4">
                         <div className="py-3">
                             <div>
                                 {/* Imagem logo */}
@@ -79,7 +80,7 @@ export default function Footer (){
                             </div>
                             <p>O mundo mágico dos brinquedos macios começa aqui!</p>
                         </div>
-                        <div className="">
+                        <div className="flex flex-col xl:flex-row gap-5 xl:gap-32">
                             <div className="py-2">
                                 <h3 className="font-medium">Pós-vendas</h3>
                                 <h3 className="font-medium">Seg-Sex - 8:00 até 18:00</h3>

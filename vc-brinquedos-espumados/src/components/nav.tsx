@@ -28,7 +28,7 @@ export default function Navbar({color, invert, showLoja, showPromo, showFav, sho
         <div className="hidden md:flex gap-6 items-center xl:mr-35">
           <Link className={`${showLoja ? 'block' : 'hidden'} cursor-pointer`} href={"/products"}>Loja</Link>
           <Link className={`${showPromo ? 'block' : 'hidden'} cursor-pointer`} href={""}>Promoções</Link>
-          <Link className={`${showFav ? 'block' : 'hidden'} cursor-pointer`} href={""}>Favoritos</Link>
+          <Link className={`${showFav ? 'block' : 'hidden'} cursor-pointer`} href={"/cart"}>Carrinho</Link>
           <Link className={`${showSobre ? 'block' : 'hidden'} cursor-pointer`} href={"/#about"}>Sobre</Link>
           <Link className={`${showCtt ? 'block' : 'hidden'} cursor-pointer`} href={""}>Contato</Link>
         </div>

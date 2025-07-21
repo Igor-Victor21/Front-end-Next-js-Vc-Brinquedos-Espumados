@@ -44,24 +44,24 @@ export default function Home() {
 
       <section className="flex w-full justify-center">
         <div className="flex flex-col">
-          <div className="flex w-[90vw] h-30 pb-5 align-end justify-start ml-5 md:justify-center md:ml-0">
+          <div id="toys" className="flex w-[90vw] h-30 pb-5 align-end justify-start ml-5 md:justify-center md:ml-0">
             <Image src={btnTT} alt="" draggable="false" className='w-7 h-7 self-end'></Image>
             <h1 className="font-normal text-4xl self-end">Loja</h1>
           </div>
           
           <div className="w-[85vw] min-h-150 mt-5 border-t self-center">
-            <div id="toys">
+            <div>
               <h1 className="text-2xl font-bold tracking-wide p-5 mt-5">Nova Coleção</h1>
             </div>
 
             <div className="flex flex-col md:flex-row justify-center gap-5">
             <Suspense fallback={<div>Carregando produtos...</div>}>
-              <CardListServer all={false}/>
+              <CardListServer all={false} queryRouter=""/>
             </Suspense>              
             </div>
 
             <div className="flex justify-end">
-              <Link className="font-medium text-[14pt] cursor-pointer text-[#7DACFF] mt-15" href={"/products"}>Ver Mais {">>>"}</Link>
+              <Link className="font-medium text-[14pt] cursor-pointer text-[#7DACFF] mt-15 duration-800 hover:tracking-[2px]" href={"/products"}>Ver Mais {">>>"}</Link>
             </div>
           </div>
         </div>        

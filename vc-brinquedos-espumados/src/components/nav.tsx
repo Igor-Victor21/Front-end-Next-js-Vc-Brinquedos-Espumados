@@ -33,7 +33,7 @@ export default function Navbar({color, invert, showLoja, showPromo, showFav, sho
           <Link className={`${showCtt ? 'block' : 'hidden'} cursor-pointer`} href={""}>Contato</Link>
         </div>
         <div className="hidden md:flex gap-6 justify-center items-center">
-          <button className={`w-20 py-1 px-3 border rounded-3xl cursor-pointer font-bold ${color ? 'text-black' : 'text-white'} ${invert ? 'bg-white' : 'bg-black'}`}>
+          <button className={`w-20 py-1 px-3 border rounded-3xl cursor-pointer font-bold duration-450 ${color ? 'text-black hover:text-white' : 'text-white hover:text-black'} ${invert ? 'bg-white hover:bg-black' : 'bg-black hover:bg-white'}`}>
             Login
           </button>
         </div>

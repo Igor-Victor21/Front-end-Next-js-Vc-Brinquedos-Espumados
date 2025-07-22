@@ -6,14 +6,17 @@ import btnTT from '../assets/images/ttBlueStars.png'
 import Footer from "@/components/footer"
 import Link from "next/link"
 import { SearchBar } from "@/components/searchBar"
+import { BarContent } from "@/components/barContent"
 
 interface Props{
-    searchParams: {query?:string}
+  searchParams: { query?: string; filter?: string };
 }
 
 
 export default function productsPage({searchParams} : Props){
   const query = searchParams.query || "";
+  const filter = searchParams.filter || "todos";
+
 
     return(
         <>
@@ -35,14 +38,12 @@ export default function productsPage({searchParams} : Props){
             </div>
 
             <div className="flex flex-row gap-5 mt-[2vh] justify-center">
-              <button className="w-25 p-1 rounded-md cursor-pointer hover:bg-[#7DACFF] duration-330">Todos</button>
-              <button className="w-25 p-1 rounded-md cursor-pointer hover:bg-[#7DACFF] duration-330">kits</button>
-              <button className="w-25 p-1 rounded-md cursor-pointer hover:bg-[#7DACFF] duration-330">Promoções</button>
+              <BarContent/>
             </div>
 
             <div className="flex flex-wrap flex-col md:flex-row gap-5 justify-center  mt-[3rem]" id="searchProducts">
             <Suspense fallback={<div className="mt-50">Carregando produtos...</div>}>
-              <CardListServer all={true} queryRouter={query}/>
+            <CardListServer all={true} queryRouter={query} filterRouter={filter} />
             </Suspense>              
             </div>
           </div>

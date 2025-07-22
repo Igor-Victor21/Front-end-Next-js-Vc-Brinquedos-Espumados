@@ -11,30 +11,46 @@ type Produto = {
 interface Props{
   all: boolean;
   queryRouter: string;
+  filterRouter: string;
 }
 
-export default async function CardListServer({all, queryRouter} : Props) {
+export default async function CardListServer({ all, queryRouter, filterRouter }: Props) {
 
   function removeAcentos(str: string) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
 
-  try{
+  try {
     const res = await fetch("http://localhost:5555/products", {
-    cache: "no-store",
-  });
-  const data: Produto = await res.json();
+      cache: "no-store",
+    });
 
-  const produtos = all ? data : data.slice(0, 3)
-  const produtosFiltrados = queryRouter!=="" ? produtos.filter((produto) =>
-    removeAcentos(produto.name.toLowerCase()).includes(
-        removeAcentos(queryRouter.toLowerCase()))) : produtos;
+    const data: Produto = await res.json();
 
-  if(produtosFiltrados.length === 0) return(<>Nenhum produto foi encontrado!</>)
+    const produtos = all ? data : data.slice(0, 3);
+
+    // Filter by name (search)
+    const filtradosPorNome = queryRouter !== "" 
+      ? produtos.filter((produto) =>
+          removeAcentos(produto.name.toLowerCase()).includes(
+            removeAcentos(queryRouter.toLowerCase())
+          )
+        )
+      : produtos;
+
+    // Filter by category (filterRouter)
+    const filtradosFinais = filtradosPorNome.filter((produto) => {
+      if (filterRouter === 'todos') return true;
+      if (filterRouter === 'kits') return produto.description.includes('|');
+      if (filterRouter === 'promocoes') return produto.description.includes('+');
+      return true;
+    });
+
+    if (filtradosFinais.length === 0) return <>Nenhum produto foi encontrado!</>;
 
     return (
       <>
-        {produtosFiltrados.map((item) => (
+        {filtradosFinais.map((item) => (
           <CardStore
             key={item.id}
             name={item.name}

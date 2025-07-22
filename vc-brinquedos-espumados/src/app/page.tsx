@@ -61,7 +61,7 @@ export default function Home() {
             </div>
 
             <div className="flex justify-end">
-              <Link className="font-medium text-[14pt] cursor-pointer text-[#7DACFF] mt-15 duration-800 hover:tracking-[2px]" href={"/products"}>Ver Mais {">>>"}</Link>
+              <Link className="font-medium text-[14pt] cursor-pointer text-[#7DACFF] mt-15  duration-800 hover:tracking-[2px]" href={"/products"}>Ver Mais {">>>"}</Link>
             </div>
           </div>
         </div>        

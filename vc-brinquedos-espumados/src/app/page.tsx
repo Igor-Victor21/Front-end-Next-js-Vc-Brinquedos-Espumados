@@ -135,16 +135,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex w-full h-200 justify-center mt-5">
+      <section className="flex w-full h-200 justify-center mt-5" id="footer">
         <div className="flex flex-col">
-          <div className="flex w-[90vw] h-30 pb-5 align-end justify-center border-b ">
-            <Image src={btnTT} alt="" draggable="false" className='w-7 h-7 self-end'></Image>
-            <h1 className="font-normal text-4xl self-end">Entre em contato</h1>
-          </div>
           
         <div className="w-screen sm:w-[99.2vw] h-400 self-center">            
             <div>
-              {/* estrutura do footer, provavelmente dividida em 2 partes: img com background e parte abaixo dela*/}
               <Footer/>
             </div>
           </div>          

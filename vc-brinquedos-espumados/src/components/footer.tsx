@@ -3,7 +3,8 @@
 import Image from 'next/image'
 
 import BtnWpp from './wpp'
-
+import BoxEmail from './formEmail'
+import PromoEmail from './inputEmail'
 
 import btnTT from '../app/assets/images/ttBlueStars.png'
 import Gmail from '../app/assets/images/IconGmail.png'
@@ -14,7 +15,6 @@ import TT from '../app/assets/images/Twitter.png'
 import Linkedin from '../app/assets/images/Linkedin.png'
 import Face from '../app/assets/images/Facebook.png'
 import Github from '../app/assets/images/Github.png'
-
 
 
 export default function Footer (){
@@ -28,15 +28,7 @@ export default function Footer (){
                         <h1 className="font-normal text-4xl">Entre em contato</h1>
                     </div>
                     <div className="flex flex-col md:flex-row gap-20">
-                        <div className="flex flex-col bg-white gap-3 p-5 m-5 rounded-lg md:w-md md:ml-20 xl:w-xl">
-                            <p className="font-medium">Nome Completo</p>
-                            <input className="p-1 border-solid border-1 border-blue-300 rounded-lg" placeholder="Nome Completo" type="text"/>
-                            <p className="font-medium">Email</p>
-                            <input className="p-1 border-solid border-1 border-blue-300 rounded-lg" placeholder="seu@email.com" type="email"/>
-                            <p className="font-medium">Mensagem</p>
-                            <textarea className="h-30 pl-1 border-solid border-1 border-blue-300 rounded-lg md:h-40 xl:h-50"/>
-                            <button className="p-2 mb-5 rounded-lg bg-yellow-400 self-center">Enviar Mensagem</button>
-                        </div>
+                        <BoxEmail/>
                         <div className="p-5 text-center flex flex-col items-center justify-center">
                             <div className="flex flex-row pb-5">
                                 {/* parte superior */}
@@ -82,10 +74,7 @@ export default function Footer (){
                         <h3 className="py-2 font-medium">Fique por dentro!</h3>
                         <p>Seja o primeiro a receber as últimas novidades sobre promoções, descontos e ofertas.</p>
                     </div>
-                    <div className="flex flex-col gap-5 xl:flex-row ">
-                        <input className="p-1 rounded-lg self-center text-center bg-white" placeholder="Digite seu e-mail" type="email"/>
-                        <button className="p-2 rounded-lg bg-yellow-400 self-center">Inscreva-se</button>
-                    </div>
+                    <PromoEmail/>
                 </div>
                 <div className="">
                     {/* Mensagem inferior */}
@@ -122,13 +111,13 @@ export default function Footer (){
                         </div>
                     </div>
                     {/* imagem de divisão */}
-                    <div className="flex flex-col pt-10 xl:flex-row justify-between">
+                    <div className="flex flex-col-reverse pt-10 gap-12 xl:flex-row justify-between gap-0">
                         <p className="pl-2">© 2025 VC Brinquedos Espumados. Todos os direitos reservados.</p>
                         <div className='flex items-center flex-row justify-center gap-4 pb-2'>
-                            <Image src={TT} alt='' draggable='false' className='h-[26px] w-[26px]'/>
-                            <Image src={Linkedin} alt='' draggable='false' className='h-[26px] w-[26px]'/>
-                            <Image src={Face} alt='' draggable='false' className='h-[26px] w-[26px]'/>
-                            <Image src={Github} alt='' draggable='false' className='h-[26px] w-[26px]'/>
+                            <a href="https://github.com/Igor-Victor21" target='_blank' rel='noopener noreferrer'><Image src={TT} alt='X' draggable='false' className='h-[26px] w-[26px]'/></a>
+                            <a href="https://github.com/Igor-Victor21" target='_blank' rel='noopener noreferrer'><Image src={Linkedin} alt='Linkedin' draggable='false' className='h-[26px] w-[26px]'/></a>
+                            <a href="https://github.com/Igor-Victor21" target='_blank' rel='noopener noreferrer'><Image src={Face} alt='Facebook' draggable='false' className='h-[26px] w-[26px]'/></a>
+                            <a href="https://github.com/Igor-Victor21" target='_blank' rel='noopener noreferrer'><Image src={Github} alt='Github' draggable='false' className='h-[26px] w-[26px]'/></a>
                         </div>
                     </div>
                 </div>

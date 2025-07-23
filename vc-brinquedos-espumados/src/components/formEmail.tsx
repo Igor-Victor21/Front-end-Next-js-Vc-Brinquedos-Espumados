@@ -39,7 +39,7 @@ export default function FormEmail() {
   }
 
   return (
-    <div className="flex flex-col bg-white gap-3 p-5 m-5 rounded-lg md:w-md md:ml-20 xl:w-xl">
+    <div className="z-40 flex flex-col bg-white gap-3 p-5 m-5 rounded-lg md:w-md md:ml-20 xl:w-xl">
         <p className="font-medium">Nome Completo</p>
         <input className="p-1 border-solid border-1 border-blue-300 rounded-lg" placeholder="Nome Completo" type="text" value={nome} onChange={(e) => setNome(e.target.value)}/>
         <p className="font-medium">Email</p>

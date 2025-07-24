@@ -2,17 +2,19 @@ import Image from "next/image";
 import logo from '../app/assets/images/Logo.png'
 import Link from "next/link";
 
+import BtnLogin from '@/components/login'
+
 interface navProps{
     color: boolean
     invert: boolean
     showLoja: boolean
-    showPromo: boolean
     showFav: boolean
+    showCart: boolean
     showSobre: boolean
     showCtt: boolean
   }
 
-export default function Navbar({color, invert, showLoja, showPromo, showFav, showSobre, showCtt} : navProps) {
+export default function Navbar({color, invert, showLoja, showFav, showCart, showSobre, showCtt} : navProps) {
 
 
   return (
@@ -27,13 +29,13 @@ export default function Navbar({color, invert, showLoja, showPromo, showFav, sho
         </div>
         <div className="hidden md:flex gap-6 items-center xl:mr-35">
           <Link className={`${showLoja ? 'block' : 'hidden'} cursor-pointer`} href={"/products"}>Loja</Link>
-          <Link className={`${showPromo ? 'block' : 'hidden'} cursor-pointer`} href={""}>Promoções</Link>
-          <Link className={`${showFav ? 'block' : 'hidden'} cursor-pointer`} href={"/cart"}>Carrinho</Link>
+          <Link className={`${showFav ? 'block' : 'hidden'} cursor-pointer`} href={"/favorites"}>Favoritos</Link>
+          <Link className={`${showCart ? 'block' : 'hidden'} cursor-pointer`} href={"/cart"}>Carrinho</Link>
           <Link className={`${showSobre ? 'block' : 'hidden'} cursor-pointer`} href={"/#about"}>Sobre</Link>
           <Link className={`${showCtt ? 'block' : 'hidden'} cursor-pointer`} href={"#footer"}>Contato</Link>
         </div>
         <div className="hidden md:flex gap-6 justify-center items-center">
-          <button className={`w-20 py-1 px-3 border rounded-3xl cursor-pointer font-bold duration-450 ${color ? 'text-black hover:text-white' : 'text-white hover:text-black'} ${invert ? 'bg-white hover:bg-black' : 'bg-black hover:bg-white'}`}>
+          <button onClick={BtnLogin} className={`w-20 py-1 px-3 border rounded-3xl cursor-pointer font-bold duration-450 ${color ? 'text-black hover:text-white' : 'text-white hover:text-black'} ${invert ? 'bg-white hover:bg-black' : 'bg-black hover:bg-white'}`}>
             Login
           </button>
         </div>

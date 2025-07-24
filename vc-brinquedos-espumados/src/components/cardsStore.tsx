@@ -2,6 +2,9 @@ import Image from 'next/image'
 import botaoComprar from '../app/assets/images/botaoComprar.png'
 import botaoFavorito from '../app/assets/images/botaoFavorito.png'
 
+import CartBtn from '@/components/btnCart'
+import FaveBtn from '@/components/btnFave'
+
 interface Props{
     name: string,
     image: string,
@@ -23,13 +26,13 @@ export const CardStore = ({ name, image, description, price, id } : Props) => {
                     <p className="h-5">{description}</p>
                 </div>
                 <div className='flex w-10 h-10 self-end justify-center mr-5'>
-                    <button className='cursor-pointer duration-350 hover:bg-black rounded-md'><Image className='duration-350 hover:invert' src={botaoFavorito} alt="" width={30}/></button>
+                    <button onClick={FaveBtn} className='cursor-pointer duration-350 hover:bg-black rounded-md'><Image className='duration-350 hover:invert' src={botaoFavorito} alt="" width={30}/></button>
                 </div>
             </div>
-            <div className="flex mb-10 items-baseline justify-center">
+            <div className="flex mb-10 pt-4 items-baseline justify-center">
                 <div className="flex h-10 w-full justify-between items-center">
                     <strong className='ml-5'>R$ {price.toFixed(2)}</strong>
-                    <button className='right-0 mr-5 cursor-pointer'><Image className="duration-400 hover:invert" src={botaoComprar} alt="" width={40} height={40} draggable={false}/></button>
+                    <button onClick={CartBtn} className='right-0 mr-5 cursor-pointer'><Image className="duration-400 hover:invert" src={botaoComprar} alt="" width={40} height={40} draggable={false}/></button>
                 </div>
             </div>
         </div>

@@ -9,21 +9,23 @@ import CardListServer from "@/components/listCardsStore"
 export default function CartPage(){
     return(
         <>
-            <Navbar color={false} invert={false} showLoja={false} showPromo={true} showFav={false} showSobre={false} showCtt={false} />
-            <section className='flex w-full h-200'>
-                {/* conteúdo da compra */}
-            </section>
-            <section className='flex flex-col p-5 gap-5'>
-                <div className='flex flex-row justify-between'>
-                    <h3>SubTotal</h3>
-                    <p>R$: </p>
-                </div>
-                <div className='flex flex-row justify-between'>
-                    <h3>Total</h3>
-                    <p>R$: </p>
-                </div>
-                <button className='p-1 bg-gray-300 rounded-lg'>Finalizar Compra</button>
-            </section>
+            <Navbar color={false} invert={false} showLoja={false} showFav={true} showCart={false} showSobre={false} showCtt={false} />
+            {/* <section className='flex flex-col'> */}
+                <section className='flex flex-col w-screen h-200 shadow-xl'>
+                    {/* conteúdo da compra */}
+                </section>
+                <section className='flex flex-col p-5 gap-5'>
+                    <div className='flex flex-row justify-between md:justify-around'>
+                        <h3>SubTotal</h3>
+                        <p>R$: </p>
+                    </div>
+                    <div className='flex flex-row justify-between md:justify-around'>
+                        <h3>Total</h3>
+                        <p>R$: </p>
+                    </div>
+                    <button className='absolute w-52 -bottom-4 self-center p-1 m-8 bg-gray-300 rounded-lg'>Finalizar Compra</button>
+                </section>
+            {/* </section> */}
         </>
     )
 }

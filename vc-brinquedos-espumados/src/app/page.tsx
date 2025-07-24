@@ -24,7 +24,7 @@ export default function Home() {
     <section className="w-full h-170">
       <section className="relative w-full h-170">
             <Image src={banner} alt="" draggable="false" className='w-full h-170 object-cover'/>       
-            <Navbar color={true} invert={true} showLoja={true} showPromo={true} showFav={true} showSobre={true} showCtt={true} /> 
+            <Navbar color={true} invert={true} showLoja={true} showFav={true} showCart={true} showSobre={true} showCtt={true} /> 
           <div className="mt-25 md:mt-35 ml-10 md:ml-25 absolute inset-0 flex flex-col">
             <h1 className="cursor-default font-extrabold text-3xl md:text-6xl text-red-50">Brincar com <br />
             Segurança Nunca <br />

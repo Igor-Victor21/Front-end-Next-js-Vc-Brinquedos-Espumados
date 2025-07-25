@@ -1,8 +1,7 @@
 import Image from 'next/image'
-import botaoComprar from '../app/assets/images/botaoComprar.png'
 import botaoFavorito from '../app/assets/images/botaoFavorito.png'
 
-import CartBtn from '@/components/btnCart'
+import CartBtn from './btnCart'
 import FaveBtn from '@/components/btnFave'
 
 interface Props{
@@ -32,7 +31,8 @@ export const CardStore = ({ name, image, description, price, id } : Props) => {
             <div className="flex mb-10 pt-4 items-baseline justify-center">
                 <div className="flex h-10 w-full justify-between items-center">
                     <strong className='ml-5'>R$ {price.toFixed(2)}</strong>
-                    <button onClick={CartBtn} className='right-0 mr-5 cursor-pointer'><Image className="duration-400 hover:invert" src={botaoComprar} alt="" width={40} height={40} draggable={false}/></button>
+                    <CartBtn id={id} name={name} price={price} image={image}/>
+                    {/* <button onClick={} className='right-0 mr-5 cursor-pointer'><Image className="duration-400 hover:invert" src={botaoComprar} alt="" width={40} height={40} draggable={false}/></button> */}
                 </div>
             </div>
         </div>

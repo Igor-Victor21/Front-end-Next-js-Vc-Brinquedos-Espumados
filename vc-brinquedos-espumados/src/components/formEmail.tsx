@@ -43,8 +43,8 @@ export default function FormEmail() {
   return (
     <div className="z-40 flex flex-col bg-white gap-3 p-5 m-5 rounded-lg md:w-md md:ml-20 xl:w-xl">
       {showToast && (
-        <div className="flex flex-col absolute w-[80vw] self-center top-[5%] bg-gray-500 p-4 z-40 rounded-lg">
-          <button onClick={() => setShowToast(false)} className="text-white font-bold">X</button>
+        <div className="flex flex-col absolute w-[80vw] md:w-[40vw] xl:w-[20vw] self-center md:self-auto top-[5%] bg-gray-500 p-4 z-40 rounded-lg">
+          <button onClick={() => setShowToast(false)} className="text-white font-bold self-end">X</button>
           <p className="text-[12px] text-white">Oops, parece que algum dos dados necessários não foi preenchido, preencha antes de continuar.</p>
         </div>
       )}

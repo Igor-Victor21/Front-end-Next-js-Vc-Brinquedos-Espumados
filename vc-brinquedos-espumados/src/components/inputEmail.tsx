@@ -6,17 +6,19 @@ export default function InputEmail(){
 
     const [email, setEmail] = useState("")
 
+    const [showToast, setShowToast] = useState(false)
+
     const handleEmail = () => {
 
         if(!email.trim()){
-            alert("Não esqueça de colocar o email")
+            setShowToast(true)
             return
         }
 
         const emailRegex = new RegExp("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")
 
         if(!emailRegex.test(email)){
-            alert("Email inválido, insira um email válido")
+            setShowToast(true)
             return
         }
 
@@ -31,6 +33,14 @@ export default function InputEmail(){
 
     return(
         <div className="flex flex-col gap-5 xl:flex-row ">
+            <div className="relative self-center w-screen md:w-[60vw] xl:w-[20vw] bottom-12 xl:left-24">
+                {showToast && (
+                    <div className="flex flex-col items-center absolute left-1/2 -translate-x-1/2 top-[5%] bg-gray-500 p-4 z-40 rounded-lg">
+                        <button onClick={() => setShowToast(false)} className="text-white font-bold self-end">X</button>
+                        <p className="text-[12px] text-white">Oops, parece que algum dos dados necessários não foi preenchido, preencha antes de continuar.</p>
+                    </div>
+                )}
+            </div>
             <input className="p-1 rounded-lg self-center text-center bg-white" placeholder="Digite seu e-mail" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <button onClick={handleEmail} className="p-2 rounded-lg bg-yellow-400 self-center">Inscreva-se</button>
         </div>

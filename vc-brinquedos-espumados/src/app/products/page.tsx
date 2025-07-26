@@ -20,7 +20,7 @@ export default function productsPage({searchParams} : Props){
 
     return(
         <>
-        <Navbar color={false} invert={false} showLoja={false} showPromo={false} showFav={true} showSobre={false} showCtt={false} />
+        <Navbar color={false} invert={false} showLoja={false} showFav={true} showCart={true} showSobre={false} showCtt={false} />
         <section className="flex w-full h-[auto] mb-15 justify-center pt-[20%] md:pt-[5%]">
         <div className="flex flex-col">
           <div className="flex w-[90vw] h-30 pb-5 align-end justify-start ml-5 md:justify-center md:ml-0">

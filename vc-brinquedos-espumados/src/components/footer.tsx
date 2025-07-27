@@ -1,5 +1,3 @@
-// Necessário importar as imagens, chuto que é umas 10
-// Preciso fazer a lógica de ida ao whatsapp e email de contato sem usar um use effect, vou pesquisar mais caso não ache nada vou perguntar pra IA mesmo sobre isso
 import Image from 'next/image'
 
 import BtnWpp from './wpp'
@@ -34,7 +32,7 @@ export default function Footer (){
                     <Image src={Leaf} alt='' draggable="false" className='h-[28vh] w-[35vw]'/>
                 </div>
                 <div className="">
-                    <div className="flex w-[90vw] mt-8 ml-4 pb-4 align-center justify-center bg-gradient-to-l from-[#7DACFF] from-0% to-[#7DACFF] to-100% rounded-full">
+                    <div className="flex w-[90vw] mt-8 ml-4 pb-4 align-center justify-center bg-gradient-to-l from-[#7DACFF] from-0% to-100% to-[#6C85B3] from-100% to-100% to-100% rounded-full">
                         <Image src={Star} alt="" draggable="false" className='w-7 h-7 self-end color'></Image>
                         <h1 className="font-normal text-4xl">Entre em contato</h1>
                     </div>

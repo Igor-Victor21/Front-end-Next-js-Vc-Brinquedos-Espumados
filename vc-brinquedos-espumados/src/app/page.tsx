@@ -67,7 +67,7 @@ export default function Home() {
         </div>        
       </section>
 
-      <section className="flex w-full xl:h-230 mt-15 xl:mt-0 justify-center" id="about">
+      <section className="flex w-full xl:h-230 mt-15 xl:mt-0 pb-20 justify-center" id="about">
         <div className="block flex flex-col">
           <div className="flex w-[90vw] h-30 pb-5 align-end justify-center ">
             <Image src={btnTT} alt="" draggable="false" className='w-7 h-7 self-end'></Image>

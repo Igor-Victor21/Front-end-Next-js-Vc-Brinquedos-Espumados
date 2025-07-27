@@ -22,11 +22,23 @@ interface FaveItem {
 }
 
 export default function FaveBtn({ id, name, price, image }: FaveBtnProps) {
+  
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [showToast, setShowToast] = useState(false)
   const [isAdding, setIsAdding] = useState(false)
   const router = useRouter()
 
   const addToFave = () => {
     if (typeof window === 'undefined') return
+
+      const user = localStorage.getItem('user')
+      const isLoggedIn = !!user
+
+      if (!isLoggedIn) {
+        setShowToast(true)
+        setTimeout(() => setShowToast(false), 3000)
+        return
+      }
 
         setIsAdding(true)
 
@@ -46,7 +58,6 @@ export default function FaveBtn({ id, name, price, image }: FaveBtnProps) {
         window.dispatchEvent(new Event('faveUpdated'))
 
         router.refresh()
-        // router.push('/cart')
         } catch (error) {
         console.error('Error adding to cart:', error)
         } finally {
@@ -55,6 +66,18 @@ export default function FaveBtn({ id, name, price, image }: FaveBtnProps) {
     }
 
   return (
-    <button onClick={addToFave} disabled={isAdding} className='cursor-pointer duration-350 hover:bg-black rounded-md'><Image className='duration-350 hover:invert' src={botaoFavorito} alt="" width={30}/></button>
+    <div className="relative">
+    {showToast && (
+      <div className="absolute items-center -top-20 -left-60 w-[80vw] md:w-[40vw] xl:w-[20vw] bg-gray-500 p-4 z-40 rounded-lg">
+        <button onClick={() => setShowToast(false)} className="text-white font-bold self-end">X</button>
+        <p className="text-[12px] text-white">Você precisa estar logado para adicionar o item aos favoritos.</p>
+      </div>
+    )}
+    <button onClick={(e) => {
+      if(!isLoggedIn){
+        e.preventDefault()
+        addToFave()
+      }}} disabled={isAdding} className='cursor-pointer duration-350 hover:bg-black rounded-md'><Image className='duration-350 hover:invert' src={botaoFavorito} alt="" width={30}/></button>
+    </div>
   )
 }

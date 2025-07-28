@@ -37,7 +37,7 @@ export default function Favorites() {
 
       <section className="flex flex-col mt-20 w-screen min-h-[200px] shadow-md px-6 py-8 gap-4 h-[80vh] overflow-y-auto scroll-smooth">
         {favorites.length === 0 ? (
-          <Image src={EmptyFave} alt='Lista de favoritos vazia' draggable='false' className='flex self-center max-w-[80vw] pt-20'/>
+          <Image src={EmptyFave} alt='Lista de favoritos vazia' draggable='false' className='flex self-center max-w-[80vw] xl:w-[40vw] pt-20'/>
         ) : (
           favorites.map(item => (
             <div key={item.id} className="flex flex-row gap-4 border-b border-gray-300 pb-4">
@@ -47,7 +47,7 @@ export default function Favorites() {
                   <h2 className="text-lg font-medium">{item.name}</h2>
                 </div>
                 <p className="text-sm text-gray-600">R$ {item.price.toFixed(2)}</p>
-                <button onClick={() => removerFavorito(item.id)} className="mt-2 w-20 text-sm hover:text-white bg-red-300 hover:bg-red-600 duration-450 rounded-md py-1 px-2">Remover</button>
+                <button onClick={() => removerFavorito(item.id)} className="mt-2 w-20 cursor-pointer text-sm hover:text-white bg-red-300 hover:bg-red-600 duration-450 rounded-md py-1 px-2">Remover</button>
               </div>
             </div>
           ))

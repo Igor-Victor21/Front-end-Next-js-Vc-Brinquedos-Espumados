@@ -113,7 +113,7 @@ export default function CartPage() {
           produtos.map(produto => {
             const quantidade = getQuantidade(produto.id)
             return (
-              <div key={produto.id} className="flex flex-row gap-4 border-b border-gray-300 pb-4">
+              <div key={produto.id} className="flex flex-row gap-4 border-b border-gray-300 xl:w-[80vw] self-center pb-4">
                 <img src={produto.image} alt={produto.name} className="w-24 h-24 rounded-lg object-cover" draggable={false}/>
                 <div className="flex flex-col justify-between flex-grow">
                   <div className="flex flex-row justify-between">

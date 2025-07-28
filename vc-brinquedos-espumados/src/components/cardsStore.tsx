@@ -17,7 +17,7 @@ export const CardStore = ({ name, image, description, price, id } : Props) => {
             </div>
             <div className='flex flex-row justify-between'>
                 <div className="flex w-50 flex-col ml-5">
-                    <h2 className='h-14 font-medium'>{name}</h2>
+                    <h2 className='h-20 font-medium'>{name}</h2>
                     <p className="h-30">{description}</p>
                 </div>
                 <div className='flex w-10 h-10 self-end justify-center mr-5'>

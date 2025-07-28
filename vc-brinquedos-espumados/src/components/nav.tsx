@@ -72,7 +72,7 @@ export default function Navbar({color, invert, showLoja, showFav, showCart, show
         </button>
       </div>
       {menuOpen && (
-        <div className={`relative ${color ? 'bg-black' : 'bg-white'} md:hidden`}>
+        <div className={`relative rounded-b-lg ${color ? 'bg-black' : 'bg-white'} md:hidden`}>
           <div className="absolute inset-0 bg-white/30 backdrop-blur-sm z-[-1]"/>
           <div className="flex flex-col items-center px-9 py-4 space-y-4 shadow-md relative z-10">
             {showLoja && <Link href="/products" className="hover:tracking-widest duration-200">Loja</Link>}

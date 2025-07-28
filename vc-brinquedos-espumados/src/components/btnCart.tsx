@@ -46,7 +46,6 @@ export default function CartBtn({ id, name, price, image }: CartBtnProps) {
       window.dispatchEvent(new Event('cartUpdated'))
 
       router.refresh()
-      // router.push('/cart')
     } catch (error) {
       console.error('Error adding to cart:', error)
     } finally {

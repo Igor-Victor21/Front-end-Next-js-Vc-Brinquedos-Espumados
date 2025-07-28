@@ -86,7 +86,7 @@ export default function CartPage() {
 
     if (!isLoggedIn) {
       setShowToast(true)
-      setTimeout(() => setShowToast(false), 3000)
+      setTimeout(() => setShowToast(false), 5000)
       return
     }
 
@@ -122,9 +122,9 @@ export default function CartPage() {
                   </div>
                   <p className="text-sm text-gray-600">{produto.description}</p>
                   <div className="flex items-center gap-2 mt-1">
-                    <button onClick={() => alterarQuantidade(produto.id, 'decrementar')} className="w-6 h-6 flex justify-center items-center bg-gray-300 rounded hover:bg-gray-400">–</button>
+                    <button onClick={() => alterarQuantidade(produto.id, 'decrementar')} className="w-6 h-6 flex justify-center cursor-pointer items-center bg-gray-300 rounded hover:bg-black hover:text-white duration-200">–</button>
                     <span className="text-sm">{quantidade}</span>
-                    <button onClick={() => alterarQuantidade(produto.id, 'incrementar')} className="w-6 h-6 flex justify-center items-center bg-gray-300 rounded hover:bg-gray-400">+</button>
+                    <button onClick={() => alterarQuantidade(produto.id, 'incrementar')} className="w-6 h-6 flex justify-center cursor-pointer items-center bg-gray-300 rounded hover:bg-black hover:text-white duration-200">+</button>
                   </div>
                 </div>
               </div>
@@ -144,11 +144,11 @@ export default function CartPage() {
         </div>
         {showToast && (
           <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[80vw] md:w-[40vw] xl:w-[20vw] bg-gray-500 p-4 z-50 rounded-lg shadow-md">
-            <button onClick={() => setShowToast(false)} className="text-white font-bold self-end mb-2">X</button>
-            <p className="text-sm text-white text-center">Você precisa estar logado para finalizar a compra.</p>
+            <button onClick={() => setShowToast(false)} className="text-gray-300 hover:text-white cursor-pointer font-bold self-end mb-2">X</button>
+            <p className="text-sm text-white font-bold text-center">Você precisa estar logado para finalizar a compra.</p>
           </div>
         )}
-        <button onClick={handleZap} className="absolute w-52 -bottom-4 self-center p-1 m-8 bg-gray-300 rounded-lg">Finalizar Compra</button>
+        <button onClick={handleZap} className="absolute w-52 -bottom-4 self-center cursor-pointer motion-safe:hover:scale-105 p-1 m-8 bg-[#7DACFF] active:bg-[#6C85B3] active:text-white rounded-lg duration-200">Finalizar Compra</button>
       </section>
     </>
   )

@@ -9,6 +9,6 @@ export default function Wpp () {
     }
 
     return(
-        <button onClick={handleZap} className="p-1 border-solid border-2 border-black-400 rounded-lg">Começar chat</button>
+        <button onClick={handleZap} className="p-1 border-solid border-2 border-black-400 rounded-lg cursor-pointer hover:bg-black hover:border-black hover:text-white transition">Começar chat</button>
     )
 }

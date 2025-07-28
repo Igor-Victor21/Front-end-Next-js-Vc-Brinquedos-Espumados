@@ -27,7 +27,7 @@ export const BarContent = () => {
         <div className="flex flex-row gap-10 mt-[2vh] justify-center">
             
             <button onClick={() => handleFilterChange('todos')} className={`w-25 p-1 rounded-md cursor-pointer hover:bg-[#a2c4ff] duration-330 ${bar==='todos' ? 'bg-[#7DACFF] scale-110' : 'bg-transparent'}`}>Todos</button>
-            <button onClick={() => handleFilterChange('kits')} className={`w-25 p-1 rounded-md cursor-pointer hover:bg-[#a2c4ff] duration-330 ${bar==='kits' ? 'bg-[#7DACFF] scale-110' : 'bg-transparent'}`}>kits</button>
+            <button onClick={() => handleFilterChange('kits')} className={`w-25 p-1 rounded-md cursor-pointer hover:bg-[#a2c4ff] duration-330 ${bar==='kits' ? 'bg-[#7DACFF] scale-110' : 'bg-transparent'}`}>Kits</button>
             <button onClick={() => handleFilterChange('promocoes')} className={`w-25 p-1 rounded-md cursor-pointer hover:bg-[#a2c4ff] duration-330 ${bar==='promocoes' ? 'bg-[#7DACFF] scale-110' : 'bg-transparent'}`}>Promoções</button>
             
         </div>

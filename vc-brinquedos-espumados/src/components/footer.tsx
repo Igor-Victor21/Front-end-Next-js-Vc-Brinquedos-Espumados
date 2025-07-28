@@ -128,10 +128,10 @@ export default function Footer (){
                     <div className="flex flex-col-reverse pt-10 gap-12 xl:flex-row justify-between gap-0">
                         <p className="pl-2">© 2025 VC Brinquedos Espumados. Todos os direitos reservados.</p>
                         <div className='flex items-center flex-row justify-center gap-4 pb-2'>
-                            <a href="https://x.com/i/flow/login" target='_blank' rel='noopener noreferrer'><Image src={TT} alt='X' draggable='false' className='h-[26px] w-[26px]'/></a>
-                            <a href="https://www.linkedin.com/in/igor-victor-693303336/" target='_blank' rel='noopener noreferrer'><Image src={Linkedin} alt='Linkedin' draggable='false' className='h-[26px] w-[26px]'/></a>
-                            <a href="https://www.facebook.com/?gad_source=1&gad_campaignid=22817110251&gbraid=0AAAABAxHldA8L9ToJoLGEJNmKHbCCnriN&gclid=Cj0KCQjwkILEBhDeARIsAL--pjzCLGc2Q7fIEM9aEq4OzxwN9HNQ5e7OTOzkIO6oyoh5Uihfo-01WfsaAt9IEALw_wcB" target='_blank' rel='noopener noreferrer'><Image src={Face} alt='Facebook' draggable='false' className='h-[26px] w-[26px]'/></a>
-                            <a href="https://github.com/Igor-Victor21" target='_blank' rel='noopener noreferrer'><Image src={Github} alt='Github' draggable='false' className='h-[26px] w-[26px]'/></a>
+                            <a href="https://x.com/i/flow/login" target='_blank' rel='noopener noreferrer'><Image src={TT} alt='X' draggable='false' className='h-[26px] w-[26px] motion-safe:hover:scale-110 transition'/></a>
+                            <a href="https://www.linkedin.com/in/igor-victor-693303336/" target='_blank' rel='noopener noreferrer'><Image src={Linkedin} alt='Linkedin' draggable='false' className='h-[26px] w-[26px] motion-safe:hover:scale-110 transition'/></a>
+                            <a href="https://www.facebook.com/?gad_source=1&gad_campaignid=22817110251&gbraid=0AAAABAxHldA8L9ToJoLGEJNmKHbCCnriN&gclid=Cj0KCQjwkILEBhDeARIsAL--pjzCLGc2Q7fIEM9aEq4OzxwN9HNQ5e7OTOzkIO6oyoh5Uihfo-01WfsaAt9IEALw_wcB" target='_blank' rel='noopener noreferrer'><Image src={Face} alt='Facebook' draggable='false' className='h-[26px] w-[26px] motion-safe:hover:scale-110 transition'/></a>
+                            <a href="https://github.com/Igor-Victor21" target='_blank' rel='noopener noreferrer'><Image src={Github} alt='Github' draggable='false' className='h-[26px] w-[26px] motion-safe:hover:scale-110 transition'/></a>
                         </div>
                     </div>
                 </div>

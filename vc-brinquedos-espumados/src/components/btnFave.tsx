@@ -36,7 +36,7 @@ export default function FaveBtn({ id, name, price, image }: FaveBtnProps) {
 
       if (!isLoggedIn) {
         setShowToast(true)
-        setTimeout(() => setShowToast(false), 3000)
+        setTimeout(() => setShowToast(false), 5000)
         return
       }
 
@@ -69,8 +69,8 @@ export default function FaveBtn({ id, name, price, image }: FaveBtnProps) {
     <div className="relative">
     {showToast && (
       <div className="absolute items-center -top-20 -left-60 w-[80vw] md:w-[40vw] xl:w-[20vw] bg-gray-500 p-4 z-40 rounded-lg">
-        <button onClick={() => setShowToast(false)} className="text-white font-bold self-end">X</button>
-        <p className="text-[12px] text-white">Você precisa estar logado para adicionar o item aos favoritos.</p>
+        <button onClick={() => setShowToast(false)} className="text-gray-300 hover:text-white cursor-pointer font-bold self-end">X</button>
+        <p className="text-[12px] font-bold text-white">Você precisa estar logado para adicionar o item aos favoritos.</p>
       </div>
     )}
     <button onClick={(e) => {
